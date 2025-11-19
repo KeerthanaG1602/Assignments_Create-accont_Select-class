@@ -9,6 +9,8 @@ public class CreateAccount {
 
 	public static void main(String[] args) {
 
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("guest");
 		
 		//Launch browser
 		ChromeDriver driver=new ChromeDriver();
@@ -38,7 +40,7 @@ public class CreateAccount {
 				driver.findElement(By.linkText("Create Account")).click();
 				
 				//Enter an account name
-				driver.findElement(By.name("accountName")).sendKeys("Keerthana");
+				driver.findElement(By.id("accountName")).sendKeys("Keerthana");
 				
 				//Enter a description as "Selenium Automation Tester." 
 				driver.findElement(By.name("description")).sendKeys("Selenium Automation Tester");
@@ -78,9 +80,9 @@ public class CreateAccount {
 				
 				//Select "Texas" as the state/province using SelectByValue.
 				
-				WebElement sourceDropdown4 =driver.findElement(By.id("generalStateProvinceGeoId"));
-				Select dropdownOptions4 = new Select (sourceDropdown4);
-				dropdownOptions3.selectByValue("TX");
+				//WebElement sourceDropdown4 =driver.findElement(By.id("generalStateProvinceGeoId"));
+				//Select dropdownOptions4 = new Select (sourceDropdown4);
+				//dropdownOptions3.selectByValue("TX");
 				
 				//Click the "Create Account" button. 
 				driver.findElement(By.className("smallSubmit")).click();
@@ -89,3 +91,4 @@ public class CreateAccount {
 	}
 
 }
+
